@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yuansong.cronjob</groupId>
+    <artifactId>proj-parent</artifactId>
+    <version>${appversion}</version>
+  </parent>
+  <artifactId>proj-boot-demo</artifactId>
+  <name>PorjBootDemo</name>
+  <description>Proj Boot Demo</description>
+  
+  <properties>
+      <main.basedir>${basedir}/../..</main.basedir>
+      <java.version>1.8</java.version>
+  </properties>
+  
+  <dependencies>
+    <!-- SpringBoot Begin -->    
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+        <exclusions>
+            <exclusion>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>      
+    <!-- SpringBoot End -->
+    <!-- Model Begin -->
+    <dependency>
+        <groupId>com.yuansong.cronjob</groupId>
+        <artifactId>proj-module-swagger</artifactId>
+        <version>${appversion}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.yuansong.cronjob</groupId>
+        <artifactId>proj-module-task</artifactId>
+        <version>${appversion}</version>
+    </dependency>
+    <!-- Model End --> 
+    <!-- 自定义 Begin -->
+    <dependency>
+        <groupId>com.yuansong.tools</groupId>
+        <artifactId>yuansong-jtools-common</artifactId>
+    </dependency>
+    <!-- 自定义 End -->
+  </dependencies>
+  
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+  </build>
+  
+</project>

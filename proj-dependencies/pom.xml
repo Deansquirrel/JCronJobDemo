@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yuansong.cronjob</groupId>
+    <artifactId>proj</artifactId>
+    <version>${appversion}</version>
+  </parent>
+  <artifactId>proj-dependencies</artifactId>
+  <packaging>pom</packaging>
+  <name>ProjDependencies</name>
+  <description>Proj Dependencies</description>
+  
+  <properties>
+    <main.basedir>${basedir}/..</main.basedir>
+    <org.mybatis.spring.boot.starter>2.1.1</org.mybatis.spring.boot.starter>
+    <com.alibaba.druid.starter>1.1.21</com.alibaba.druid.starter>
+    <com.microsoft.sqljdbc4>3.0</com.microsoft.sqljdbc4>
+    <org.xerial.sqlite.jdbc>3.28.0</org.xerial.sqlite.jdbc>
+    <yuansong.tools.jtools.common>0.0.7</yuansong.tools.jtools.common>
+	<yuansong.tools.jtools.secret>0.0.2</yuansong.tools.jtools.secret>
+  </properties>
+  
+  <repositories>
+    <repository>
+        <id>deansquirrel-maven-repo-release</id>
+        <url>https://gitee.com/deansquirrel/maven-jrepository/raw/master</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+  </dependencies>
+  
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+	        <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+	    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${springversion}</version>         
+            <exclusions>  
+                <exclusion>  
+                    <groupId>org.springframework.boot</groupId>  
+                    <artifactId>spring-boot-starter-logging</artifactId>  
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Swagger Begin -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!-- Swagger End -->
+        <!-- 第三方 数据库 Begin -->
+        <dependency>
+	        <groupId>com.microsoft</groupId>
+	        <artifactId>sqljdbc4</artifactId>
+	        <version>${com.microsoft.sqljdbc4}</version>
+	    </dependency>
+	    <dependency>
+	       <groupId>org.xerial</groupId>
+	       <artifactId>sqlite-jdbc</artifactId>
+	       <version>${org.xerial.sqlite.jdbc}</version>
+	    </dependency>
+	    <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${org.mybatis.spring.boot.starter}</version>         
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${com.alibaba.druid.starter}</version>
+        </dependency>
+        <!-- 第三方 数据库 End -->
+		<!-- 自定义 Begin -->
+		<dependency>
+            <groupId>com.yuansong.tools</groupId>
+            <artifactId>yuansong-jtools-common</artifactId>
+            <version>${yuansong.tools.jtools.common}</version>
+        </dependency>
+		<dependency>
+            <groupId>com.yuansong.tools</groupId>
+            <artifactId>yuansong-jtools-secret</artifactId>
+            <version>${yuansong.tools.jtools.secret}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.yuansong.tools</groupId>
+                    <artifactId>yuansong-jtools-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		<!-- 自定义 End -->
+    </dependencies>
+  </dependencyManagement>
+  
+  <build>
+    <pluginManagement>
+        <plugins>
+        </plugins>
+    </pluginManagement>
+    <plugins>
+    </plugins>
+  </build> 
+</project>

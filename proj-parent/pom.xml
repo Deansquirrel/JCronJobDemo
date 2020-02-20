@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.yuansong.cronjob</groupId>
+    <artifactId>proj-dependencies</artifactId>
+    <version>${appversion}</version>
+    <relativePath>../proj-dependencies</relativePath>
+  </parent>
+  <artifactId>proj-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>CronJobParent</name>
+  <description>Cron Job Parent</description>
+  
+  <properties>
+    <main.basedir>${basedir}/..</main.basedir>
+    <projversion>${appversion}</projversion>
+  </properties>
+  
+  <modules>
+  	<module>proj-module-config</module>
+  	<module>proj-module-swagger</module>
+  	<module>proj-module-task</module>
+  	<module>proj-boot-demo</module>
+  	<module>proj-boot-demo-cron</module>
+  </modules>
+</project>

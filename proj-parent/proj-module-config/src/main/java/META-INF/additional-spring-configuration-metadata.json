@@ -1,0 +1,12 @@
+{
+	"properties": [{
+		"name": "proj",
+		"type": "com.yuansong.cronjob.module.config.ProjectConfig",
+		"description": "A description for 'proj'"
+	},
+	{
+		"name": "swagger",
+		"type": "com.yuansong.cronjob.module.config.SwaggerConfig",
+		"description": "A description for 'swagger'"
+	}]
+}
